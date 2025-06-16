@@ -1,0 +1,55 @@
+
+
+body{
+    color: white;
+    text-align: center;
+}
+.container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    color: rgb(134, 17, 17);
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+.Operadores{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 10px;
+}
+
+
+.button{
+    color: brown;
+    width: 35px;
+    height: 35px;
+} 
+
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+  
+
+  
+  
+  
+  
+  
+
