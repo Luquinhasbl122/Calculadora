@@ -1,55 +1,184 @@
-
-
-body{
-    color: white;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.container{
-    margin: auto;
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    height: 100vh;
-    color: rgb(134, 17, 17);
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
-    padding: 10px 20px;
-}
-.Operadores{
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 10px;
+    color: white;
 }
 
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
 
-.button{
-    color: brown;
-    width: 35px;
-    height: 35px;
-} 
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
 
+/* Tela principal da calculadora */
+.calculator-screen {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
- 
- 
- 
+.visor {
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 10px;
+    color: #00ff88;
+    font-size: 24px;
+    text-align: right;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    word-wrap: break-word;
+    overflow: hidden;
+    resize: none;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
 
+.visor:focus {
+    outline: none;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(0, 255, 136, 0.3);
+}
 
- 
- 
- 
- 
- 
- 
- 
+.Operadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
 
+.button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
-  
+.button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
 
-  
-  
-  
-  
-  
+.button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo especial para operadores */
+.button[data-value="+"],
+.button[data-value="-"],
+.button[data-value="x"],
+.button[data-value="/"],
+.button[data-value="="] {
+    background: rgba(255, 165, 0, 0.8);
+}
+
+.button[data-value="ac"] {
+    background: rgba(255, 69, 0, 0.8);
+}
+
+.button[data-value="c"] {
+    background: rgba(255, 140, 0, 0.8);
+}
+
+.button[data-value="%"] {
+    background: rgba(138, 43, 226, 0.8);
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .container {
+        max-width: 350px;
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .visor {
+        height: 80px;
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    .button {
+        font-size: 18px;
+        padding: 15px 10px;
+        min-height: 50px;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .container {
+        max-width: 300px;
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .calculator-screen {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .visor {
+        height: 70px;
+        font-size: 18px;
+        padding: 12px;
+    }
+    
+    .Operadores {
+        gap: 8px;
+    }
+    
+    .button {
+        font-size: 16px;
+        padding: 12px 8px;
+        min-height: 45px;
+        border-radius: 8px;
+    }
+}
 
